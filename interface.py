@@ -1,7 +1,7 @@
 # 2018 Codebreakers
 #
 import connect4
-import tictactoe
+# import tictactoe
 import os
 
 games = {'quit': quit, 'connect4': connect4.play, 'tic-tac-toe': tictactoe.play}
@@ -30,6 +30,8 @@ def menu():
     while True:
         choice = input("enter the number corresponding to your choice:\t")
         if ((type(int(choice)) != int) or ((int(choice) < 0) or (int(choice) > 2))):
+            print("please enter a valid number")
+            break
         else:
             return games[int(choice)]
 
