@@ -1,10 +1,10 @@
 # 2018 Codebreakers
 #
 import connect4
-import tictactoe
+import ticTac
 import os
 
-games = {'quit': quit, 'connect4': connect4.play, 'tic-tac-toe': tictactoe.play}
+games = {'quit': quit, 'connect4': connect4.play, 'tic-tac-toe': ticTac.play}
 
 
 def main():
