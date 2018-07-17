@@ -22,7 +22,7 @@ def menu():
     os.system('clear')
     print("Welcome to The Codebreakers Game Extravaganza!!!\n")
     print("What game would you like to play?\n")
-    print("1. Connect 4\n")
+    print("1. Connect 5\n")
     print("2. Tic Tac Toe\n")
     print("enter 0 to quit")
 
@@ -34,6 +34,7 @@ def menu():
             break
         else:
             return games[int(choice)]
+
 
 
 def quit():
