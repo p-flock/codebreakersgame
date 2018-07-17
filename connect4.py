@@ -125,7 +125,7 @@ def win(user_won):
         print("congratulations! You beat the all-mighty computer")
         input()
     else:
-        print("Oh no! The computer won...Better luck next time!")
+        print("Oh no! The computer won...Better luck next time!", u'\U0001f4A3')
         input()
     return
 
