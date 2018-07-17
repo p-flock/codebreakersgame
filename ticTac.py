@@ -14,6 +14,18 @@ Stop = 1
 Game = Running    
 Mark = 'X'    
 turn = 1
+def keepPlaying():
+    global board
+    global Game
+    global turn
+    response = input("want to play again? Y/N?" + "\n")
+    if response in ["y", "Y", "YES", "yes"]:
+        board = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']
+        Game = Running
+        turn = 1
+        return play()
+    else:
+        return
 def DrawBoard():    
     print(" %c | %c | %c " % (board[1],board[2],board[3]))    
     print("___|___|___")    
@@ -86,6 +98,8 @@ def play():
     elif(Game==Win):    
         turn-=1    
         if(turn%2!=0):    
-            print("You Won!")    
+            print("You Won!")
+            return keepPlaying()
         else:    
-            print("Computer Won!")    
+            print("Computer Won!")
+            return keepPlaying()
