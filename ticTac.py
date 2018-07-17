@@ -14,7 +14,6 @@ Stop = 1
 Game = Running
 Mark = 'X'
 turn = 1
-<<<<<<< HEAD
 def keepPlaying():
     global board
     global Game
@@ -33,14 +32,6 @@ def DrawBoard():
     print(" %c | %c | %c " % (board[4],board[5],board[6]))
     print("___|___|___")
     print(" %c | %c | %c " % (board[7],board[8],board[9]))
-=======
-def DrawBoard():
-    print(" %c | %c | %c " % (board[1],board[2],board[3]))
-    print("___|___|___")
-    print(" %c | %c | %c " % (board[4],board[5],board[6]))
-    print("___|___|___")
-    print(" %c | %c | %c " % (board[7],board[8],board[9]))
->>>>>>> 63fa8737ac871b10192ef96e0a9cbaa8346cedf6
 
 
 def checkWin():
