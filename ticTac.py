@@ -14,12 +14,33 @@ Stop = 1
 Game = Running
 Mark = 'X'
 turn = 1
+<<<<<<< HEAD
+def keepPlaying():
+    global board
+    global Game
+    global turn
+    response = input("want to play again? Y/N?" + "\n")
+    if response in ["y", "Y", "YES", "yes"]:
+        board = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']
+        Game = Running
+        turn = 1
+        return play()
+    else:
+        return
+def DrawBoard():    
+    print(" %c | %c | %c " % (board[1],board[2],board[3]))    
+    print("___|___|___")    
+    print(" %c | %c | %c " % (board[4],board[5],board[6]))    
+    print("___|___|___")    
+    print(" %c | %c | %c " % (board[7],board[8],board[9]))  
+=======
 def DrawBoard():
     print(" %c | %c | %c " % (board[1],board[2],board[3]))
     print("___|___|___")
     print(" %c | %c | %c " % (board[4],board[5],board[6]))
     print("___|___|___")
     print(" %c | %c | %c " % (board[7],board[8],board[9]))
+>>>>>>> 63fa8737ac871b10192ef96e0a9cbaa8346cedf6
 
 
 def checkWin():
@@ -79,6 +100,20 @@ def play():
             turn+=1
             checkWin()
 
+<<<<<<< HEAD
+    os.system('cls')
+    DrawBoard()    
+    if(Game==Draw):    
+        print("Game Draw")    
+    elif(Game==Win):    
+        turn-=1    
+        if(turn%2!=0):    
+            print("You Won!")
+            return keepPlaying()
+        else:    
+            print("Computer Won!")
+            return keepPlaying()
+=======
     os.system('clear')
     DrawBoard()
     if(Game==Draw):
@@ -91,3 +126,4 @@ def play():
         else:
             print("Computer Won!")
             input()
+>>>>>>> 63fa8737ac871b10192ef96e0a9cbaa8346cedf6
