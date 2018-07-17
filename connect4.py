@@ -6,13 +6,16 @@ import os
 def play():
     board = [[' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ',
                                                                     ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ']]
-    print("Welcome to Connect 4! Why don't you play first?")
+    os.system('clear')
+    print("Welcome to Connect 5! Why don't you play first?")
     pprint(board)
-    while True:
+    game_over = False
+    while not game_over:
         user_turn(board)
         os.system('clear')
         pprint(board)
         if is_win(board):
+            game_over = True
             win(True)
             return
         print("The computer is thinking....")
@@ -21,6 +24,7 @@ def play():
         os.system('clear')
         pprint(board)
         if is_win(board):
+            game_over = True
             win(False)
             return
 
@@ -78,10 +82,15 @@ def is_win(board):
     win = False
     char = ' '
     for x in range(5):
-        win = False
+        first = True
         for y in range(5):
-            if board[y][x] != ' ' and board[y][x] == char:
-                char = board[y][x]
+            if board[y][x] != ' ':
+                if first:
+                    char = board[y][x]
+                    first = False
+                elif board[y][x] != char:
+                    win = False
+                    break
                 win = True
             else:
                 win = False
@@ -90,27 +99,36 @@ def is_win(board):
             return True
 
     # check rows
+    win = False
     char = ' '
     for x in range(5):
-        win = False
+        first = True
         for y in range(5):
-            if board[x][y] != ' ' and board[x][y] == char:
-                char = board[x][y]
+            if board[x][y] != ' ':
+                if first:
+                    char = board[x][y]
+                    first = False
+                elif board[x][y] != char:
+                    win = False
+                    break
                 win = True
             else:
                 win = False
                 break
         if win:
             return True
-
     return False
 
 
 def win(user_won):
     if user_won:
         print("congratulations! You beat the all-mighty computer")
+        input()
     else:
         print("Oh no! The computer won...Better luck next time!")
+        input()
+    return
+
 
 def computer_move(board):
     while True:
